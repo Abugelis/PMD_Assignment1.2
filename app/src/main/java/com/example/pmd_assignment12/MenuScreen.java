@@ -4,18 +4,22 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Toast;
 
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
-import java.util.List;
 
-public class Menu_screen extends AppCompatActivity {
+public class MenuScreen extends AppCompatActivity implements MyRvAdapter.ItemClickListener {
 
     private ArrayList<String> menuText;
     private ArrayList<Integer> menuImages;
     private MyRvAdapter adapter;
+    private Intent intent;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,12 +50,18 @@ public class Menu_screen extends AppCompatActivity {
 
         //initialising adapter
         adapter = new MyRvAdapter(this,menuText,menuImages);
-
-        //rv.setOnClickListener((View.OnClickListener) this);
+        adapter.setClickListener(this);
         rv.setAdapter(adapter);
-
-
-
     }
 
+    @Override
+    public void onItemClick(View view, int position) {
+        //Toast.makeText(this, "You clicked " + adapter.getItem(position) + " on row number " +
+             //   position, Toast.LENGTH_SHORT).show();
+        switch (adapter.getImageItem(position)){
+            case 0:
+                Intent sendToPub = new Intent(MenuScreen.this, Pubs.class);
+                startActivity(sendToPub);
+        }
+    }
 }

@@ -2,7 +2,6 @@ package com.example.pmd_assignment12;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -37,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         begin_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent send_to_main = new Intent(MainActivity.this,Menu_screen.class);
+                Intent send_to_main = new Intent(MainActivity.this, MenuScreen.class);
                 startActivity(send_to_main);
             }
         });
