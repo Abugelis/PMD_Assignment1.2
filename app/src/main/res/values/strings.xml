@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">PMD_Assignment_1.2</string>
+
+    <!-- Strings for welcome screen -->
+    <string name="welcome_message">Welcome to Mallow</string>
+    <string name="welcome_button">Begin</string>
+
+</resources>
