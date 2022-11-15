@@ -47,7 +47,7 @@ public class Menu_screen extends AppCompatActivity {
         //initialising adapter
         adapter = new MyRvAdapter(this,menuText,menuImages);
 
-        rv.setOnClickListener((View.OnClickListener) this);
+        //rv.setOnClickListener((View.OnClickListener) this);
         rv.setAdapter(adapter);
 
 
